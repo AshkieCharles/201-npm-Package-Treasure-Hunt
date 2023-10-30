@@ -2,6 +2,9 @@ import './style.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
+import dayjs from 'dayjs'
+
+let now = dayjs().format('MMMM, D, YYYY')
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -12,6 +15,7 @@ document.querySelector('#app').innerHTML = `
       <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
     </a>
     <h1>Hello Vite!</h1>
+    <h2>${now}</h2>
     <div class="card">
       <button id="counter" type="button"></button>
     </div>
@@ -20,5 +24,6 @@ document.querySelector('#app').innerHTML = `
     </p>
   </div>
 `
+
 
 setupCounter(document.querySelector('#counter'))
